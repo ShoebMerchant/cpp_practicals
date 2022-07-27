@@ -14,11 +14,14 @@ int main()
             cout << "Invalid number";
         }
     } while (rows < 0);
-    for (int i = rows; i < 0; i--)
+    for (int i = 0; i < rows; i++)
     {
-        for (int j = 0; j < i; j++)
+        for (int j = 0; j < rows; j++)
         {
-            cout << n++ << " ";
+            if (j > (rows - i - 1))
+                cout << n++ << "\t";
+            else
+                cout << "\t";
         }
         cout << endl;
     }

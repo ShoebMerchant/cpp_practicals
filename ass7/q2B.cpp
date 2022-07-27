@@ -1,6 +1,6 @@
 /**
- *  Create a Base class Train containing protected data membersas
- *  Train_no,Train_Name.Derive a class Route(Route_id,Sorce,Destination) from Train class.
+ *  Create a Base class Train containing protected data members as Train_no,Train_Name.
+ *  Derive a class Route(Route_id,Sorce,Destination) from Train class.
  *  Also derive a class Reservation(Number_of_Seats,Train_Class,Fare,Travel_Date) from Route.
  *  Write a program to perform following necessary functions:
  ** a. Enter details of "n" reservations

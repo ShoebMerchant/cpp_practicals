@@ -18,14 +18,14 @@ protected:
     string p_name;
 };
 
-class Account : protected Person
+class Account : protected virtual Person
 {
 protected:
     int ac_num;
     int balance;
 };
 
-class Official : protected Person
+class Official : protected virtual Person
 {
 protected:
     string designation;

@@ -6,7 +6,7 @@
 
 #include <iostream>
 using namespace std;
-string MONTH_FORMAT[] = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "July", "Aug", "Sep", "Oct", "Nov", "Dec"};
+string MONTH_FORMAT[] = {"","Jan", "Feb", "Mar", "Apr", "May", "Jun", "July", "Aug", "Sep", "Oct", "Nov", "Dec"};
 class Date
 {
     int dd;   // day

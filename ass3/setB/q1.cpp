@@ -19,7 +19,7 @@ public:
     }
 
     // Copy constructor
-    // :: Overloading default constructor and parameterized constructor
+    // Overloading default constructor and parameterized constructor
     Point(Point &N)
     {
         x = N.x;

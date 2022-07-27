@@ -32,12 +32,12 @@ public:
 
 void String::combine(String &b)
 {
-    char *temp = new char[length + 1];
+    char *temp = new char[length];
     strcpy(temp, name);
 
     length += b.length; // length of combined Strings
     delete[] name;
-    name = new char[length + 1];
+    name = new char[length];
     strcpy(name, temp);
     strcat(name, b.name);
 };

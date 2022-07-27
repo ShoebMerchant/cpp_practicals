@@ -27,7 +27,7 @@ public:
     }
 };
 
-class Theory : protected Student
+class Theory : protected virtual Student
 {
 protected:
     int marks_in_math;
@@ -39,16 +39,20 @@ protected:
 public:
     void set_data()
     {
-        cout << "Enter Student's roll number : ";
-        cin >> roll_no;
-        cout << "Enter Student's name : ";
-        cin >> name;
+        Student::set_data();
+        // cout << "Enter Student's roll number : ";
+        // cin >> roll_no;
+        // cout << "Enter Student's name : ";
+        // cin >> name;
         cout << "Enter Theory Marks : ";
         cin >> marks_in_math >> marks_in_science >> marks_in_english >> marks_in_bio >> marks_in_foc;
     }
+    void display_theory_marks() {
+        cout << marks_in_math << marks_in_science << marks_in_english << marks_in_bio << marks_in_foc << endl;
+    }
 };
 
-class Practical : protected Student
+class Practical : protected virtual Student
 {
 protected:
     int marks_in_pe;
@@ -57,32 +61,44 @@ protected:
 public:
     void set_data()
     {
-        cout << "Enter Student's roll number : ";
-        cin >> roll_no;
-        cout << "Enter Student's name : ";
-        cin >> name;
+        // cout << "Enter Student's roll number : ";
+        // cin >> roll_no;
+        // cout << "Enter Student's name : ";
+        // cin >> name;
         cout << "Enter Practical's makrs : ";
         cin >> marks_in_pe >> marks_in_chem;
+    }
+    void display_practical_marks() {
+        cout << marks_in_pe << marks_in_chem << endl;
     }
 };
 
 class Result : protected Theory, protected Practical
 {
     int total_marks;
-    string class;
+    // string Class;
 
 public:
     void set_data()
     {
-        cout << "Enter Student's roll number : ";
-        cin >> roll_no;
-        cout << "Enter Student's name : ";
-        cin >> name;
-        cout << "Enter Theory Marks : ";
-        cin >> marks_in_math >> marks_in_science >> marks_in_english >> marks_in_bio >> marks_in_foc;
-        cout << "Enter Practical's makrs : ";
-        cin >> marks_in_pe >> marks_in_chem;
+        Theory::set_data();
+        Practical::set_data();
+        display_stud_stats();
+        // cout << "Enter Student's roll number : ";
+        // cin >> roll_no;
+        // cout << "Enter Student's name : ";
+        // cin >> name;
+        // cout << "Enter Theory Marks : ";
+        // cin >> marks_in_math >> marks_in_science >> marks_in_english >> marks_in_bio >> marks_in_foc;
+        // cout << "Enter Practical's makrs : ";
+        // cin >> marks_in_pe >> marks_in_chem;
     }
+    void display_stud_stats();
+};
+
+void Result::display_stud_stats(){
+    Theory::display_theory_marks();
+    Practical::display_practical_marks();
 };
 
 void display_options()
@@ -95,11 +111,7 @@ void display_options()
 
 int main()
 {
-    int n;
-    cin >> n;
-    switch (n)
-    {
-    case 1:
-    }
+    Result r;
+    r.set_data();
     return 0;
 }

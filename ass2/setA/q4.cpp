@@ -1,6 +1,7 @@
 #include <iostream>
-using namespace std;
 #include <string.h>
+#include <iomanip>
+using namespace std;
 
 /**
  * 4. Define a class string to perform different operations:
@@ -40,10 +41,11 @@ public:
     {
         cout << "Concatenating " << str << " with " << str1.get_str() << " we get : ";
         int sl = strLen(); // str length
-        char *s1 = str1.get_str();
-        for (int j = 0, i = sl - 1; j < sl - 1; j++)
+        char *s1 = new char[str1.strLen() - 1];
+        s1 = str1.get_str();
+        for (int j = 0, i = sl; i < str1.strLen() + sl; j++)
             str[i++] = s1[j];
-        cout << str << endl;
+        cout << setw(str1.strLen() + sl) << str << endl;
         return;
     }
 
@@ -70,7 +72,7 @@ public:
         if (l != l1)
             return false;
 
-        for (int i = 0; i < l; i++)
+        for (int i = 0; i <= l; i++)
             if (str[i] != temp[i])
                 return false;
 
@@ -85,7 +87,7 @@ int main()
     cout << "Length of String " << str.get_str() << " is : " << str.strLen() << endl;
     cout << "Length of String " << str1.get_str() << " is : " << str1.strLen() << endl;
     str.strcat(str1);
-    // str.strrev();
+    str.strrev();
     // cout << str.strcmp(str1) << endl;
     return 0;
 }
